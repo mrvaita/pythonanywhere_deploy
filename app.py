@@ -12,7 +12,6 @@ def hello_world():
     return "Hello from Flask Michele!"
 
 
-@app.route("/")
 @app.route("/update_server", methods=["POST"])
 def webhook():
     if request.method == "POST":
