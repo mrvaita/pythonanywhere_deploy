@@ -40,7 +40,8 @@ def validate_request(req):
     return payload
 
 
-def is_valid_signature(x_hub_signature, data, private_key=os.environ["WEBHOOK_SECRET"]):
+#def is_valid_signature(x_hub_signature, data, private_key=os.environ["WEBHOOK_SECRET"]):
+def is_valid_signature(x_hub_signature, data, private_key=os.getenv("WEBHOOK_SECRET")):
     """Verify webhook signature.
     """
     hash_algorithm, github_signature = x_hub_signature.split("=", 1)
