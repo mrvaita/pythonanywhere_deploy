@@ -3,6 +3,8 @@
 
 from flask import Flask, request
 import git
+import hashlib
+import hmac
 import os
 
 app = Flask(__name__)
