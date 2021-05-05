@@ -15,7 +15,7 @@ def hello_world():
 @app.route("/update_server", methods=["POST"])
 def webhook():
     if request.method == "POST":
-        repo = git.Repo("home/mrvaita/git-repos/pythonanywhere_deploy")
+        repo = git.Repo("/home/mrvaita/git-repos/pythonanywhere_deploy")
         origin = repo.remotes.origin
         origin.pull()
             
