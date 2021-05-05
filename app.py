@@ -7,18 +7,18 @@ import git
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def hello_world():
-    return 'Hello from Flask Michele!'
+    return "Hello from Flask Michele!"
 
 
 @app.route("/")
-@app.route('/update_server', methods=['POST'])
+@app.route("/update_server", methods=["POST"])
 def webhook():
-    if request.method == 'POST':
-        repo = git.Repo('/home/mrvaita/git-repos/pythonanywhere_deploy/')
+    if request.method == "POST":
+        repo = git.Repo("/home/mrvaita/git-repos/pythonanywhere_deploy/")
         origin = repo.remotes.originorigin.pull()
             
-        return 'Updated PythonAnywhere successfully', 200
+        return "Updated PythonAnywhere successfully", 200
     else:
-        return 'Wrong event type', 400
+        return "Wrong event type", 400
