@@ -16,7 +16,8 @@ def hello_world():
 def webhook():
     if request.method == "POST":
         repo = git.Repo("/home/mrvaita/git-repos/pythonanywhere_deploy")
-        origin = repo.remotes.originorigin.pull()
+        origin = repo.remotes.origin
+        origin.pull()
             
         return "Updated PythonAnywhere successfully", 200
     else:
