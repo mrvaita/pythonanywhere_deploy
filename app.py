@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "Hello from Flask Michele!!!!!!"
+    return "Hello from Flask Michele!!!!!!!"
 
 
 @app.route("/update_server", methods=["POST"])
