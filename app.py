@@ -1,7 +1,7 @@
 
 # A very simple Flask Hello World app for you to get started with...
 
-from flask import Flask, request
+from flask import Flask, request, abort
 import git
 import hashlib
 import hmac
@@ -42,7 +42,6 @@ def validate_request(req):
     return payload
 
 
-#def is_valid_signature(x_hub_signature, data, private_key=os.environ["WEBHOOK_SECRET"]):
 def is_valid_signature(x_hub_signature, data, private_key=os.getenv("WEBHOOK_SECRET")):
     """Verify webhook signature.
     """
